@@ -178,16 +178,23 @@ Use `autoFormat: false` to skip DAX formatting for faster measure creation (~1.5
 
 ## Limitations
 
-The following features are **NOT supported** due to Excel COM API limitations:
+### Excel Power Pivot Limitations
+These features are **not available in Excel Power Pivot** (unlike Power BI):
+
+| Feature | Excel Power Pivot |
+|---------|-------------------|
+| Calculation Groups | ❌ Not supported |
+| Perspectives | ❌ Not supported |
+| Row-Level Security (RLS) | ❌ Not supported |
+| DEFINE COLUMN in DAX queries | ❌ Not supported |
+
+### MCP Server Limitations
+These exist in Excel but **cannot be managed via this MCP** due to COM API restrictions:
 
 | Feature | Status |
 |---------|--------|
-| Create/Update/Delete Calculated Columns | ❌ |
-| Set Column Descriptions | ❌ |
-| DEFINE COLUMN in DAX queries | ❌ |
-| Calculation Groups | ❌ |
-| Perspectives | ❌ |
-| Row-Level Security | ❌ |
+| Create/Update/Delete Calculated Columns | ❌ Use Power Pivot window |
+| Set Column Descriptions | ❌ Use Power Pivot window |
 
 ## Troubleshooting
 
