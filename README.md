@@ -20,19 +20,9 @@ A Model Context Protocol (MCP) server that enables AI assistants to interact wit
 
 ## Installation
 
-### Option 1: Download Pre-built Binary (Recommended)
+Download the latest `ExcelPowerPivotMcp.exe` from the [Releases](https://github.com/back1ply/Excel-Power-Pivot-MCP/releases) page.
 
-Download the latest release from the [Releases](https://github.com/yourusername/excel-powerpivot-mcp/releases) page.
-
-### Option 2: Build from Source
-
-```bash
-git clone https://github.com/yourusername/excel-powerpivot-mcp.git
-cd excel-powerpivot-mcp
-dotnet build -c Release
-```
-
-The executable will be in `bin/Release/net8.0-windows/win-x64/ExcelPowerPivotMcp.exe`
+No installation required - just download and configure your MCP client.
 
 ## MCP Client Configuration
 
@@ -89,7 +79,6 @@ Add to your `.vscode/mcp.json`:
 | `MCP_QUERY_TIMEOUT_SECONDS` | DAX query timeout | `120` |
 | `MCP_CONNECTION_TIMEOUT_MS` | Excel connection timeout | `10000` |
 | `MCP_CONNECTION_RETRY_COUNT` | Retry attempts for connection | `3` |
-| `MCP_RESOURCES_PATH` | Path to resources folder | `./Resources` |
 
 ## Usage
 
