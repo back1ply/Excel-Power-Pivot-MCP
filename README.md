@@ -71,15 +71,6 @@ Add to your `.vscode/mcp.json`:
 }
 ```
 
-## Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `MCP_MAX_QUERY_ROWS` | Maximum rows returned from DAX queries | `1000` |
-| `MCP_QUERY_TIMEOUT_SECONDS` | DAX query timeout | `120` |
-| `MCP_CONNECTION_TIMEOUT_MS` | Excel connection timeout | `10000` |
-| `MCP_CONNECTION_RETRY_COUNT` | Retry attempts for connection | `3` |
-
 ## Usage
 
 ### 1. Open Excel with Power Pivot
