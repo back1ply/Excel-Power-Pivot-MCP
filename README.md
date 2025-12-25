@@ -13,6 +13,9 @@ A Model Context Protocol (MCP) server that enables AI assistants to interact wit
 - **Power Query Discovery** - List Power Queries (M code) in the workbook
 - **Table Management** - Add Excel tables to the data model, refresh tables/model
 
+> [!WARNING]
+> **Use at your own risk.** This tool modifies your Excel Power Pivot data models directly. The author is not responsible for any data loss, corruption, or damage to your workbooks. **Always maintain backups of your Excel files before using this tool.**
+
 ## Requirements
 
 - **Windows 10/11** (required for Excel COM interop)
@@ -158,7 +161,6 @@ AI: Don't forget to save!
 | Tool | Description |
 |------|-------------|
 | `add_table_to_model` | Add Excel table to data model |
-| `set_format_string` | Set formatting for measure/column |
 | `refresh_table` | Refresh a single table |
 
 ## Performance Tips
