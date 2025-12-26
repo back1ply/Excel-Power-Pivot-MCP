@@ -1,0 +1,53 @@
+# Release workflow - builds and publishes a single executable
+# Trigger manually from GitHub Actions tab
+
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., 1.0.0)'
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Build self-contained executable
+        run: |
+          dotnet publish -c Release -r win-x64 --self-contained true `
+            -p:PublishSingleFile=true `
+            -p:IncludeNativeLibrariesForSelfExtract=true `
+            -p:EnableCompressionInSingleFile=true `
+            -p:Version=${{ github.event.inputs.version }} `
+            -o ./publish
+      
+      - name: Delete existing release (keep only latest)
+        run: |
+          gh release delete latest --yes --cleanup-tag 2>$null
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Create release with executable only
+        run: |
+          gh release create latest `
+            --title "v${{ github.event.inputs.version }}" `
+            --notes "## Excel Power Pivot MCP Server v${{ github.event.inputs.version }}`n`nDownload ``ExcelPowerPivotMcp.exe`` below and configure your MCP client.`n`nSee [README](https://github.com/${{ github.repository }}#installation) for setup instructions." `
+            --latest `
+            ./publish/ExcelPowerPivotMcp.exe
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

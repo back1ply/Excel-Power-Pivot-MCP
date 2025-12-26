@@ -87,7 +87,7 @@ The AI assistant will first discover and connect to your workbook:
 ```
 AI: Let me discover your Excel workbooks...
 → discover_workbooks()
-→ Found: MyModel.xlsx (has Power Pivot)
+→ Found: MyModel.xlsx (hasDataModel: true)
 
 AI: Connecting to your workbook...
 → connect_workbook(workbook_name: "MyModel.xlsx")
@@ -160,8 +160,30 @@ AI: Don't forget to save!
 ### Table Operations
 | Tool | Description |
 |------|-------------|
-| `add_table_to_model` | Add Excel table to data model |
+| `add_table_to_model` | [DESTRUCTIVE] Add Excel table to data model |
 | `refresh_table` | Refresh a single table |
+
+### Prompts
+| Prompt | Description |
+|--------|-------------|
+| `describe_model` | Describe the data model in plain English |
+| `workflow_create_measure` | Guided workflow to create a measure |
+| `workflow_analyze_model` | Analyze model structure and suggest improvements |
+| `workflow_test_dax` | Test DAX before creating permanent measures |
+| `workflow_fix_measure` | Debug and fix a broken measure |
+| `workflow_add_relationship` | Guided workflow to add a relationship |
+| `recover_connection` | Recover from a lost Excel connection |
+
+### Resources
+| URI | Description |
+|-----|-------------|
+| `model://schema` | Current Power Pivot data model schema (JSON) |
+| `model://dirty-state` | Check for unsaved changes |
+| `model://logs` | Recent server diagnostic logs |
+| `model://instructions` | Guidelines for working with Power Pivot |
+| `model://best-practices` | Measure best practices guide |
+| `model://dax-guide` | DAX query guide for Excel |
+| `model://workflows` | Common workflow reference |
 
 ## Performance Tips
 
