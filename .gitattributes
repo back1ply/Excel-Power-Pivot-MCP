@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Exclude everything from GitHub's auto-generated source archives (zip/tar.gz)
+* export-ignore
+!.gitattributes
