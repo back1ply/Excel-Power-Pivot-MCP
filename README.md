@@ -84,7 +84,7 @@ Open your Excel workbook that contains a Power Pivot data model.
 
 The AI assistant will first discover and connect to your workbook:
 
-```
+```text
 AI: Let me discover your Excel workbooks...
 → discover_workbooks()
 → Found: MyModel.xlsx (hasDataModel: true)
@@ -96,7 +96,7 @@ AI: Connecting to your workbook...
 
 ### 3. Explore and Modify
 
-```
+```text
 AI: Let me see what's in your data model...
 → get_model_summary()
 → 5 tables, 12 measures, 6 relationships
@@ -116,82 +116,82 @@ AI: Don't forget to save!
 
 ### Connection
 
-| Tool | Description |
-|------|-------------|
-| `discover_workbooks` | Find open Excel workbooks with Power Pivot models |
-| `connect_workbook` | Connect to a specific workbook |
-| `get_connection_status` | Check current connection status |
-| `save_workbook` | Save the connected workbook |
-| `refresh_model` | Refresh the entire data model |
+| Tool                    | Description                                       |
+| ----------------------- | ------------------------------------------------- |
+| `discover_workbooks`    | Find open Excel workbooks with Power Pivot models |
+| `connect_workbook`      | Connect to a specific workbook                    |
+| `get_connection_status` | Check current connection status                   |
+| `save_workbook`         | Save the connected workbook                       |
+| `refresh_model`         | Refresh the entire data model                     |
 
 ### Model Metadata
 
-| Tool | Description |
-|------|-------------|
-| `get_model_summary` | Comprehensive model overview |
-| `list_tables` | List all tables with row counts |
-| `list_columns` | List columns in a table |
-| `list_measures` | List measures with expressions |
-| `list_relationships` | Show table relationships |
-| `list_hierarchies` | List user-defined hierarchies |
-| `list_kpis` | List Key Performance Indicators |
-| `get_dependencies` | Show calculation dependencies |
-| `list_power_queries` | List Power Queries (M code) |
-| `list_excel_tables` | List Excel tables (ListObjects) |
+| Tool                 | Description                     |
+| -------------------- | ------------------------------- |
+| `get_model_summary`  | Comprehensive model overview    |
+| `list_tables`        | List all tables with row counts |
+| `list_columns`       | List columns in a table         |
+| `list_measures`      | List measures with expressions  |
+| `list_relationships` | Show table relationships        |
+| `list_hierarchies`   | List user-defined hierarchies   |
+| `list_kpis`          | List Key Performance Indicators |
+| `get_dependencies`   | Show calculation dependencies   |
+| `list_power_queries` | List Power Queries (M code)     |
+| `list_excel_tables`  | List Excel tables (ListObjects) |
 
 ### DAX Queries
 
-| Tool | Description |
-|------|-------------|
-| `run_dax` | Execute DAX queries or preview table data |
-| `analyze_column` | Get column statistics and sample values |
+| Tool             | Description                               |
+| ---------------- | ----------------------------------------- |
+| `run_dax`        | Execute DAX queries or preview table data |
+| `analyze_column` | Get column statistics and sample values   |
 
 ### Measure CRUD
 
-| Tool | Description |
-|------|-------------|
+| Tool             | Description                                                      |
+| ---------------- | ---------------------------------------------------------------- |
 | `create_measure` | Create a new DAX measure (supports `autoFormat=false` for speed) |
-| `update_measure` | Update expression/name/description |
-| `delete_measure` | Delete a measure |
+| `update_measure` | Update expression/name/description                               |
+| `delete_measure` | Delete a measure                                                 |
 
 ### Relationship CRUD
 
-| Tool | Description |
-|------|-------------|
-| `create_relationship` | Create a table relationship |
-| `delete_relationship` | Delete a relationship |
+| Tool                      | Description                        |
+| ------------------------- | ---------------------------------- |
+| `create_relationship`     | Create a table relationship        |
+| `delete_relationship`     | Delete a relationship              |
 | `set_relationship_active` | Activate/deactivate a relationship |
 
 ### Table Operations
 
-| Tool | Description |
-|------|-------------|
+| Tool                 | Description                                 |
+| -------------------- | ------------------------------------------- |
 | `add_table_to_model` | [DESTRUCTIVE] Add Excel table to data model |
-| `refresh_table` | Refresh a single table |
+| `refresh_table`      | Refresh a single table                      |
 
 ### Prompts
 
-| Prompt | Description |
-|--------|-------------|
-| `describe_model` | Describe the data model in plain English |
-| `workflow_create_measure` | Guided workflow to create a measure |
-| `workflow_analyze_model` | Analyze model structure and suggest improvements |
-| `workflow_test_dax` | Test DAX before creating permanent measures |
-| `workflow_fix_measure` | Debug and fix a broken measure |
-| `workflow_add_relationship` | Guided workflow to add a relationship |
-| `recover_connection` | Recover from a lost Excel connection |
+| Prompt                      | Description                                      |
+| --------------------------- | ------------------------------------------------ |
+| `describe_model`            | Describe the data model in plain English         |
+| `workflow_create_measure`   | Guided workflow to create a measure              |
+| `workflow_analyze_model`    | Analyze model structure and suggest improvements |
+| `workflow_test_dax`         | Test DAX before creating permanent measures      |
+| `workflow_fix_measure`      | Debug and fix a broken measure                   |
+| `workflow_add_relationship` | Guided workflow to add a relationship            |
+| `recover_connection`        | Recover from a lost Excel connection             |
 
 ### Resources
 
-| URI | Description |
-|-----|-------------|
-| `model://schema` | Current Power Pivot data model schema (JSON) |
-| `model://dirty-state` | Check for unsaved changes |
-| `model://logs` | Recent server diagnostic logs |
-| `model://instructions` | Guidelines for working with Power Pivot |
-| `model://best-practices` | Measure best practices guide |
-| `model://dax-guide` | DAX query guide for Excel |
-| `model://workflows` | Common workflow reference |
+| URI                      | Description                                  |
+| ------------------------ | -------------------------------------------- |
+| `model://schema`         | Current Power Pivot data model schema (JSON) |
+| `model://dirty-state`    | Check for unsaved changes                    |
+| `model://logs`           | Recent server diagnostic logs                |
+| `model://instructions`   | Guidelines for working with Power Pivot      |
+| `model://best-practices` | Measure best practices guide                 |
+| `model://dax-guide`      | DAX query guide for Excel                    |
+| `model://workflows`      | Common workflow reference                    |
 
 ## Performance Tips
 
@@ -214,30 +214,30 @@ Use `autoFormat: false` to skip DAX formatting for faster measure creation (~1.5
 
 These features are **not available in Excel Power Pivot** (unlike Power BI):
 
-| Feature | Excel Power Pivot |
-|---------|-------------------|
-| Calculation Groups | ❌ Not supported |
-| Perspectives | ❌ Not supported |
-| Row-Level Security (RLS) | ❌ Not supported |
-| DEFINE COLUMN in DAX queries | ❌ Not supported |
+| Feature                      | Excel Power Pivot   |
+| ---------------------------- | ------------------- |
+| Calculation Groups           | ❌ Not supported    |
+| Perspectives                 | ❌ Not supported    |
+| Row-Level Security (RLS)     | ❌ Not supported    |
+| DEFINE COLUMN in DAX queries | ❌ Not supported    |
 
 ### MCP Server Limitations
 
 These exist in Excel but **cannot be managed via this MCP** due to COM API restrictions:
 
-| Feature | Status |
-|---------|--------|
+| Feature                                 | Status                    |
+| --------------------------------------- | ------------------------- |
 | Create/Update/Delete Calculated Columns | ❌ Use Power Pivot window |
-| Set Column Descriptions | ❌ Use Power Pivot window |
+| Set Column Descriptions                 | ❌ Use Power Pivot window |
 
 ## Troubleshooting
 
-| Error | Solution |
-|-------|----------|
-| "Excel is not running" | Open Excel with your workbook |
-| "Workbook not found" | Ensure the workbook is open in Excel |
-| "No data model" | Create a Power Pivot data model first |
-| "Not connected" | Call `connect_workbook` first |
+| Error                  | Solution                              |
+| ---------------------- | ------------------------------------- |
+| "Excel is not running" | Open Excel with your workbook         |
+| "Workbook not found"   | Ensure the workbook is open in Excel  |
+| "No data model"        | Create a Power Pivot data model first |
+| "Not connected"        | Call `connect_workbook` first         |
 
 ## License
 
