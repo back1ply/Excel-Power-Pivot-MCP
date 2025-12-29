@@ -115,6 +115,7 @@ AI: Don't forget to save!
 ## Available Tools
 
 ### Connection
+
 | Tool | Description |
 |------|-------------|
 | `discover_workbooks` | Find open Excel workbooks with Power Pivot models |
@@ -124,6 +125,7 @@ AI: Don't forget to save!
 | `refresh_model` | Refresh the entire data model |
 
 ### Model Metadata
+
 | Tool | Description |
 |------|-------------|
 | `get_model_summary` | Comprehensive model overview |
@@ -138,19 +140,22 @@ AI: Don't forget to save!
 | `list_excel_tables` | List Excel tables (ListObjects) |
 
 ### DAX Queries
+
 | Tool | Description |
 |------|-------------|
 | `run_dax` | Execute DAX queries or preview table data |
 | `analyze_column` | Get column statistics and sample values |
 
 ### Measure CRUD
+
 | Tool | Description |
 |------|-------------|
-| `create_measure` | Create a new DAX measure |
+| `create_measure` | Create a new DAX measure (supports `autoFormat=false` for speed) |
 | `update_measure` | Update expression/name/description |
 | `delete_measure` | Delete a measure |
 
 ### Relationship CRUD
+
 | Tool | Description |
 |------|-------------|
 | `create_relationship` | Create a table relationship |
@@ -158,12 +163,14 @@ AI: Don't forget to save!
 | `set_relationship_active` | Activate/deactivate a relationship |
 
 ### Table Operations
+
 | Tool | Description |
 |------|-------------|
 | `add_table_to_model` | [DESTRUCTIVE] Add Excel table to data model |
 | `refresh_table` | Refresh a single table |
 
 ### Prompts
+
 | Prompt | Description |
 |--------|-------------|
 | `describe_model` | Describe the data model in plain English |
@@ -175,6 +182,7 @@ AI: Don't forget to save!
 | `recover_connection` | Recover from a lost Excel connection |
 
 ### Resources
+
 | URI | Description |
 |-----|-------------|
 | `model://schema` | Current Power Pivot data model schema (JSON) |
@@ -203,6 +211,7 @@ Use `autoFormat: false` to skip DAX formatting for faster measure creation (~1.5
 ## Limitations
 
 ### Excel Power Pivot Limitations
+
 These features are **not available in Excel Power Pivot** (unlike Power BI):
 
 | Feature | Excel Power Pivot |
@@ -213,6 +222,7 @@ These features are **not available in Excel Power Pivot** (unlike Power BI):
 | DEFINE COLUMN in DAX queries | ❌ Not supported |
 
 ### MCP Server Limitations
+
 These exist in Excel but **cannot be managed via this MCP** due to COM API restrictions:
 
 | Feature | Status |
