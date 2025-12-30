@@ -167,6 +167,7 @@ AI: Don't forget to save!
 | Tool                 | Description                                 |
 | -------------------- | ------------------------------------------- |
 | `add_table_to_model` | [DESTRUCTIVE] Add Excel table to data model |
+| `delete_table`       | [DESTRUCTIVE] Delete a table from the model |
 | `refresh_table`      | Refresh a single table                      |
 
 ### Prompts
