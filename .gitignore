@@ -1,0 +1,52 @@
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test results
+TestResults/
+*.coverage
+*.coveragexml
+
+# Logs and temp files
+*.log
+nul
+[Tt]emp/
+[Tt]mp/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Internal/planning docs
+IMPLEMENTATION_SUMMARY.md
+
+# Claude Code internal config
+.claude/
+
+# Excel working files (keep sample files in Excel Files/)
+*.xlsx
+*.xlsm
+!Excel\ Files/**
+
+# Publish output (distributed via GitHub Releases)
+publish/

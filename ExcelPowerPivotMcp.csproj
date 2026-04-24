@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- Upgraded to .NET 8 for official MCP SDK support -->
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Tests\**</DefaultItemExcludes>
+
+    <!-- ENABLE STRICT ANALYSIS -->
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <NoWarn>$(NoWarn);CA1848</NoWarn>
+
+    <!-- Windows-specific for COM interop - WindowsForms required for STA message pump -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+    <!-- Single-file deployment settings -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+
+    <!-- English only - exclude satellite assemblies for other languages -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+
+    <!-- Assembly info -->
+    <AssemblyName>ExcelPowerPivotMcp</AssemblyName>
+    <RootNamespace>ExcelPowerPivotMcp</RootNamespace>
+    <Version>2.8.3</Version>
+    <Description>MCP Server for Excel Power Pivot - enables AI assistants to interact with Power
+      Pivot data models</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Official MCP SDK -->
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.1" />
+    <PackageReference Include="ModelContextProtocol" Version="0.5.0-preview.1" />
+
+    <!-- Hosting infrastructure -->
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <PackageReference Include="Polly" Version="8.2.0" />
+
+    <!-- DAX Formatter API client from SQLBI (daxformatter.com) -->
+    <PackageReference Include="Dax.Formatter" Version="1.1.0" />
+
+  </ItemGroup>
+
+  <!-- Embed Resources in assembly for single-file deployment -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\**\*" />
+  </ItemGroup>
+
+</Project>
