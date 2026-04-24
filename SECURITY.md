@@ -9,17 +9,13 @@
 
 ## Reporting a Vulnerability
 
-**Do not open a public GitHub issue for security vulnerabilities.**
-
-Report via email: **back1ply@gmail.com**
+Open a [GitHub issue](https://github.com/back1ply/Excel-Power-Pivot-MCP/issues) and label it `security`.
 
 Include:
 - Description of the vulnerability
 - Steps to reproduce
 - Potential impact
 - Any suggested fix (optional)
-
-Expect an initial response within 48 hours. Once confirmed, a fix will be prioritized and a patched release issued. You will be credited in the release notes unless you prefer otherwise.
 
 ## Scope
 
